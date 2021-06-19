@@ -1,0 +1,58 @@
+.header {
+    height: 80rem;
+    position: relative;
+    
+    &__menu__wrapper {
+        width: $grid-width-max;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        
+        @include respond(small) {
+            width: $grid-width-bigger;
+        }
+
+        @include respond(smaller) {
+            display: none;
+        }
+    }
+
+    &__slide {
+        background-image: linear-gradient(
+            45deg,
+            rgba($color-primary, 0.95),
+            rgba($color-secondary, 0.95)),
+            url(../img/01_header-bg.png);
+        background-size: cover;
+        background-position: top;
+        text-align: center;
+        padding-top: 37rem;
+        height: 80rem;
+    }
+
+    &__bullets {
+        position: absolute;
+        flex-direction: column;
+        height: 20rem;
+        right: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        @include respond(smaller) {
+            flex-direction: row;
+            top: 30%;
+            right: 50%;
+            transform: translate(50%, 0);
+            width: 20rem;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        bottom: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

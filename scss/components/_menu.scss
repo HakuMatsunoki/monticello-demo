@@ -1,0 +1,64 @@
+.menu {
+	display: inline-flex;
+	width: 100%;	
+	padding-top: 5.5rem;
+	
+	@include respond(smaller) {
+        display: none;
+    }
+
+	&__logo {
+		margin-right: 10rem;
+	}
+	
+	&__navigation {
+		padding-top: 20px;
+		flex: 1;
+		display: inline-flex;
+		justify-content: space-between;
+	}
+
+	&__link {
+		width: 25%;
+		list-style-type: none;
+		position: relative;
+		font-size: 1.4rem;
+		line-height: 1.4rem;
+		color: $color-white;
+		text-transform: uppercase;
+		font-family: "Gotham", sans-serif;
+		
+		
+		&::before {
+			content: '';
+			left: -2.3rem;
+			top: 2px;
+			position: absolute;
+			@include bullet;
+		}
+
+		&:hover::before {
+			background-color: $color-white;
+		}
+	}
+
+	&__socials {
+		margin-top: .65rem;
+		
+		@include respond(large) {
+	        margin-top: .67rem;
+	    }
+
+	    @include respond(big) {
+	        margin-top: 1rem;
+	    }
+
+	    @include respond(medium) {
+	        margin-top: 1.5rem;
+	    }		
+	}
+}
+
+.bullet-start::before {
+	background-color: $color-white;
+}

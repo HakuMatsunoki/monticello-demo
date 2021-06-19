@@ -1,0 +1,76 @@
+.project {
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+	overflow-x: hidden;
+
+	&__image-container {
+		width: calc(100% - 4rem);
+		height: 47rem;
+		position: relative;
+				
+		&--left {
+			margin-right: 4rem;
+			
+			&::after {
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: -7rem;
+				left: -26rem;
+				background-color: $color-primary;
+				z-index: -1;
+			}
+		}
+
+		&--right {
+			margin-left: 4rem;
+			
+			&::after {
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: -7rem;
+				right: -26rem;
+				background-color: $color-secondary;
+				z-index: -1;
+			}
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__heading {
+		margin-top: 5rem;
+		margin-bottom: 2.5rem;
+	}
+	
+	&__description {
+		margin-bottom: 3.5rem;
+	}
+
+	&__details-link {
+		width: 19rem;
+		
+		@include respond(small) {
+	        width: 23rem;
+	    }
+	}
+
+	&__location-link {
+		margin-top: 5.5rem;
+	}
+}
+
+.rect-move-left::after {
+    animation: moveInLeft .75s ease-out;
+}
+
+.rect-move-right::after {
+    animation: moveInRight .75s ease-out;
+}

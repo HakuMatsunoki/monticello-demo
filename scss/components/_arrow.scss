@@ -1,0 +1,14 @@
+.arrow {
+    @include circled-links
+ 
+    &__icon {
+        font-size: 1rem;
+        line-height: 3.8rem;
+        color: $color-white;
+        
+        @include respond(smaller) {
+	        font-size: 1.8rem;
+	        line-height: 5.4rem;
+	    }
+    }
+}

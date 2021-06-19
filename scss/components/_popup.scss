@@ -1,0 +1,134 @@
+.popup {
+    min-height: 45rem;
+    width: $small-container-width;
+    background-color: $color-white;
+    color: $color-dark;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0px -4px 15px rgba($color-white, .2));
+    z-index: 101;
+    padding: 6rem;  
+    background-image: url(../img/17_popup-bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+    
+    @include respond(smallest) {
+        width: 95%;
+        padding: 5rem 1.5rem;
+    }
+    
+    &__heading {
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+        
+        &::before {
+            top: -3rem;
+        }
+    }
+}
+
+.info {
+    &__contacts {
+        width: 50%;
+        float: left;
+        
+        @include respond(smallest) {
+            width: 100%;
+            float: none;
+        }
+    }
+
+    &__contact {
+        display: inline-block;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        color: $color-dark;
+        
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+
+        @include respond(smallest) {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__icon {
+        color: $color-secondary;
+        font-size: 1.6rem;
+    }
+
+    &__form {
+        width: 50%;
+        float: right;
+        
+        @include respond(smallest) {
+            width: 100%;
+            float: none;
+            margin-top: 5rem;
+        }
+    }
+
+    &__field {
+        width: 100%;
+        border-bottom: 1px solid rgba($color-dark, .2);
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        color: $color-dark;
+        padding-bottom: 1.6rem;
+        
+        &:first-child {
+            margin-bottom: 3.6rem;
+        }
+        
+        &::placeholder {
+            color: rgba($color-grey, .5);
+        }
+
+        &:focus {
+            border-color: rgba($color-dark, 1);    
+            
+            &::placeholder {
+                color: $color-dark;
+            }
+        }
+    }
+
+    &__btn {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+        margin-top: 3rem;
+        float: right;
+        
+        &__inner {
+            text-transform: inherit;
+            font-size: inherit;
+            color: inherit;
+        }
+
+        @include respond(smallest) {
+            width: 80%;
+            @include centered;
+            float: none;
+        }
+    }
+}
+
+.shield {
+    position: fixed;
+    background-color: rgba($color-dark, .6);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+}

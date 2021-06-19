@@ -1,0 +1,89 @@
+.row {
+    display: flex;
+    justify-content: space-between;  
+    max-width: $grid-width-max;
+    @include centered;   
+    
+    @include respond(small) {
+        max-width: $grid-width-bigger;
+    }
+}
+
+.col-1-of-1 {
+    width: 100%; 
+}
+
+.col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2); 
+}
+
+.col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+}
+
+.col-2-of-3 {
+    width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+}
+
+.col-1-of-6 {
+    width: calc((100% - 5 * #{$gutter-horizontal}) / 6);
+}
+
+.col-2-of-6 {
+    width: calc(2 * ((100% - 5 * #{$gutter-horizontal}) / 6) + #{$gutter-horizontal});
+}
+
+.col-3-of-6 {
+    width: calc(3 * ((100% - 5 * #{$gutter-horizontal}) / 6) + 2 * #{$gutter-horizontal});
+}
+
+.col-4-of-6 {
+    width: calc(4 * ((100% - 5 * #{$gutter-horizontal}) / 6) + 3 * #{$gutter-horizontal});
+}
+
+.col-5-of-6 {
+    width: calc(5 * ((100% - 5 * #{$gutter-horizontal}) / 6) + 4 * #{$gutter-horizontal});
+}
+
+.col-5-of-12 {
+    width: calc(5 * ((100% - 11 * #{$gutter-horizontal}) / 12) + 4 * #{$gutter-horizontal});
+}
+
+.col-7-of-12 {
+    width: calc(7 * ((100% - 11 * #{$gutter-horizontal}) / 12) + 6 * #{$gutter-horizontal});
+}
+
+
+@include respond(smaller) {
+    .row {
+        margin-left: 3rem;
+        margin-right: 3rem;    
+    }
+
+    .col-5-of-12 {
+        width: 50%; 
+    }
+
+    .col-7-of-12 {
+        width: 50%; 
+    }
+}
+
+@include respond(smallest) {
+    .row {
+        flex-wrap: wrap;    
+    }
+
+    .col-5-of-12 {
+        width: 100%; 
+        order: 2;
+    }
+
+    .col-7-of-12 {
+        width: 100%;
+        order: 1;
+    }
+}
+
+
+

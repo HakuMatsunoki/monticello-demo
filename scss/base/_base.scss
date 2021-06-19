@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    
+    @include respond(large) {
+        font-size: 56.25%;
+    }
+
+    @include respond(big) {
+        font-size: 50%;
+    }
+
+    @include respond(medium) {
+        font-size: 42%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: $color-white;
+	cursor: pointer;
+}
+
+button::-moz-focus-outer, button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input {
+	border: none;
+	background-color: inherit;
+}

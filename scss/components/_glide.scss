@@ -1,0 +1,16 @@
+.glide {
+	position: relative;
+	
+	&__bullets {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__bullet {
+		@include bullet;
+		
+		&--active {
+			background-color: $color-white;
+		}
+	}
+}

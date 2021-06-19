@@ -1,0 +1,38 @@
+.logo {
+	display: inline-block;
+	position: relative;
+
+	&__svg {
+		fill: $color-white;
+		width: 241px;
+		height: 54px;
+	}
+
+	&:hover::after, 
+	&-start::after {
+		content: '';
+		bottom: -4px;
+		left: 5px;
+		height: 4px;
+		width: 4px;
+		background-color: #FFF;
+		position: absolute;
+		border-radius: 50%;
+		animation: star .75s ease-in;
+		opacity: 0;
+	}
+
+	&:hover::before,
+	&-start::before {
+		content: '';
+		bottom: -3px;
+		left: 5px;
+		height: 1px;
+		width: 24rem;
+		background-color: #FFF;
+		position: absolute;
+		animation: treck .75s ease-in;
+		opacity: .5;
+	}
+} 
+		

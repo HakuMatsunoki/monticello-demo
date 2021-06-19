@@ -1,0 +1,28 @@
+.socials {
+	width: 16rem;
+	
+	@include respond(smaller) {
+        width: 25rem;
+    }
+	
+		
+	&__social {
+		@include circled-links
+		display: inline-block;
+				
+		&:not(:last-child) {
+			margin-right: 2rem;
+		}
+
+		&__icon {
+			font-size: 1.6rem;
+			line-height: 3.75rem;
+			color: $color-white;
+			
+			@include respond(smaller) {
+		        font-size: 2.4rem;
+		        line-height: 5.2rem;
+		    }
+		}
+	}
+}
